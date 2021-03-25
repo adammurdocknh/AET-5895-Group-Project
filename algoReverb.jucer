@@ -4,6 +4,11 @@
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
   <MAINGROUP id="x8CW2a" name="algoReverb">
     <GROUP id="{4A06C2BC-2D1F-5A03-8649-79F9A2B0C6CE}" name="Source">
+      <GROUP id="{96CD99FE-349A-22C9-FF99-BBC9488EA3A6}" name="assets">
+        <FILE id="lZcyVr" name="gui_draft.png" compile="0" resource="1" file="Source/assets/gui_draft.png"/>
+        <FILE id="qdZB8L" name="gui_draft_project file.afdesign" compile="0"
+              resource="1" file="Source/assets/gui_draft_project file.afdesign"/>
+      </GROUP>
       <FILE id="UD4oPk" name="FractionalDelay.cpp" compile="1" resource="0"
             file="Source/FractionalDelay.cpp"/>
       <FILE id="LVf9fb" name="FractionalDelay.hpp" compile="0" resource="0"
