@@ -15,7 +15,7 @@ AlgoReverbAudioProcessorEditor::AlgoReverbAudioProcessorEditor (AlgoReverbAudioP
 {
     // Make sure that before the constructor has finished, you've set the
     // editor's size to whatever you need it to be.
-    setSize (400, 300);
+    setSize (1000, 700);
 }
 
 AlgoReverbAudioProcessorEditor::~AlgoReverbAudioProcessorEditor()
@@ -26,11 +26,8 @@ AlgoReverbAudioProcessorEditor::~AlgoReverbAudioProcessorEditor()
 void AlgoReverbAudioProcessorEditor::paint (juce::Graphics& g)
 {
     // (Our component is opaque, so we must completely fill the background with a solid colour)
+	auto background = juce::ImageCache::getFromMemory(BinaryData::gui_draft_png, BinaryData::gui_draft_pngSize);
     g.fillAll (getLookAndFeel().findColour (juce::ResizableWindow::backgroundColourId));
-
-    g.setColour (juce::Colours::white);
-    g.setFont (15.0f);
-    g.drawFittedText ("Hello World!", getLocalBounds(), juce::Justification::centred, 1);
 }
 
 void AlgoReverbAudioProcessorEditor::resized()

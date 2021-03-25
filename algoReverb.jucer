@@ -8,6 +8,8 @@
         <FILE id="lZcyVr" name="gui_draft.png" compile="0" resource="1" file="Source/assets/gui_draft.png"/>
         <FILE id="qdZB8L" name="gui_draft_project file.afdesign" compile="0"
               resource="1" file="Source/assets/gui_draft_project file.afdesign"/>
+        <FILE id="sQytNB" name="Knob.cpp" compile="1" resource="0" file="Source/assets/Knob.cpp"/>
+        <FILE id="wkY14A" name="Knob.h" compile="0" resource="0" file="Source/assets/Knob.h"/>
       </GROUP>
       <FILE id="UD4oPk" name="FractionalDelay.cpp" compile="1" resource="0"
             file="Source/FractionalDelay.cpp"/>
