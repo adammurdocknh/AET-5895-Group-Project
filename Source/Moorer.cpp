@@ -9,3 +9,27 @@
 */
 
 #include "Moorer.h"
+
+Moorer::Moorer() {
+    
+}
+
+float Moorer::processSample(float x, int channel){
+    return x;
+}
+
+void Moorer::setReverbTime(float newReverb){
+    
+}
+
+void Moorer::setModulation(float newMod){
+    
+}
+
+void Moorer::setDiffusion(float newDiff){
+    
+}
+
+void Moorer::setSampleRate(int newFs){
+    Fs = newFs;
+}
