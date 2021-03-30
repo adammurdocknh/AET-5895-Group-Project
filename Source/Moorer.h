@@ -9,3 +9,26 @@
 */
 
 #pragma once
+
+class Moorer{
+    
+public:
+    
+    Moorer();
+    
+    float processSample(float x, int channel);
+    
+    void setReverbTime(float newReverb);
+    
+    void setModulation(float newMod);
+    
+    void setDiffusion(float newDiff);
+    
+    void setSampleRate(int newFs);
+    
+    
+private:
+    
+    int Fs = 48000;
+    
+};

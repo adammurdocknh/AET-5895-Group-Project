@@ -20,6 +20,8 @@
       <FILE id="sZHyck" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
       <FILE id="fzJqEb" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="M9hX8G" name="Moorer.cpp" compile="1" resource="0" file="Source/Moorer.cpp"/>
+      <FILE id="V2e52R" name="Moorer.h" compile="0" resource="0" file="Source/Moorer.h"/>
     </GROUP>
   </MAINGROUP>
   <JUCEOPTIONS JUCE_STRICT_REFCOUNTEDPOINTER="1" JUCE_VST3_CAN_REPLACE_VST2="0"/>
