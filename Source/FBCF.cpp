@@ -9,15 +9,24 @@
 */
 
 #include "FBCF.h"
+#include "FractionalDelay.cpp"
 
 FBCF::FBCF(){
 }
 
-FBCF::FBCF(float delay, float fbGain, float amp, float rate){
-    this->delay = delay;
-    this->fbGain = fbGain;
-    this->amp = amp;
-    this->rate = rate;
+float FBCF::processSample(float x, int channel) {
     
+    float y = x; //allocating memory because it needs to exist
     
+    fB = 0.f;
+    x += fB;
+    y = delay.processSample(w,channel);
+    fB = y;
+    
+    return y;
+
+
 }
+
+
+

@@ -10,6 +10,7 @@
 
 #pragma once
 #include <cmath>
+#include "FractionalDelay.hpp"
 
 class FBCF {
     
@@ -25,7 +26,9 @@ public:
     // Destructor
     ~FBCF();
     
-    float processSample(float x,int channel,int buffer);
+    void processSignal(float * signal, const int numSamples, const int channel);
+
+    float processSample(float x,int channel);
     
     void setFs(float Fs);
     
@@ -39,9 +42,12 @@ public:
     
 private:
     
+    
+    float fB = 0.0f;
+    
     float Fs = 48000.f;
     
-    float delay = .05f; // Max delay time of 50 ms, where do we do conversion?
+   // float delay = .05f; // Max delay time of 50 ms, where do we do conversion?
     
     const int MAX_BUFFERSIZE = 96000;
     float delayBuffer[96000][2] = {0.0f};
@@ -50,6 +56,10 @@ private:
     float fbGain = 0.25f; // <1
     float amp = 1.0f; //[0-1]
     float rate = 1.0f; // Hz, speed of LFO?
+    
+    // input needs to be in samples for delay
+    int w = 100.f; //delay in samples
+    FractionalDelay delay{static_cast<float>(w),1.1f};
     
     
 
