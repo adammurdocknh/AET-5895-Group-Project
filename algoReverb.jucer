@@ -20,6 +20,8 @@
       <FILE id="sZHyck" name="PluginEditor.cpp" compile="1" resource="0"
             file="Source/PluginEditor.cpp"/>
       <FILE id="fzJqEb" name="PluginEditor.h" compile="0" resource="0" file="Source/PluginEditor.h"/>
+      <FILE id="W3B8v4" name="APF.cpp" compile="1" resource="0" file="Source/APF.cpp"/>
+      <FILE id="pBjXMc" name="APF.h" compile="0" resource="0" file="Source/APF.h"/>
       <FILE id="CZIZVH" name="tdl.cpp" compile="1" resource="0" file="Source/tdl.cpp"/>
       <FILE id="kiA29L" name="tdl.h" compile="0" resource="0" file="Source/tdl.h"/>
     </GROUP>
