@@ -31,18 +31,16 @@ public:
     
     void setSampleRate(int newFs);
     
-    TDL tdl;
-    
+	APF apf1;
+    APF apf2;
+	    
     FBCF fbcf1;
     FBCF fbcf2;
     FBCF fbcf3;
     FBCF fbcf4;
     
-    APF apf1;
-    APF apf2;
-    
-    
-    
+    TDL tdl;
+
     
 private:
     
