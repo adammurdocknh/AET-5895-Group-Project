@@ -18,6 +18,7 @@ public:
     // Constructor function (special function - no return type, name = Class name)
     FractionalDelay();
     
+    // these two inputs are what we need to change
     FractionalDelay(float delay, float speed);
     
     // Destructor
