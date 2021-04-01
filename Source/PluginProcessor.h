@@ -52,6 +52,13 @@ public:
     //==============================================================================
     void getStateInformation (juce::MemoryBlock& destData) override;
     void setStateInformation (const void* data, int sizeInBytes) override;
+	
+	
+	float time = 0.f;
+	float diffuse = 0.f;
+	float mod= 0.f;
+	float mix = 0.f;
+	
 
 private:
     //==============================================================================

@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <JUCERPROJECT id="GHKmls" name="algoReverb" projectType="audioplug" useAppConfig="0"
-              addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
+              displaySplashScreen="1" jucerFormatVersion="1">
   <MAINGROUP id="x8CW2a" name="algoReverb">
     <GROUP id="{4A06C2BC-2D1F-5A03-8649-79F9A2B0C6CE}" name="Source">
       <GROUP id="{96CD99FE-349A-22C9-FF99-BBC9488EA3A6}" name="assets">
+        <FILE id="FNcKD3" name="knob_large.png" compile="0" resource="1" file="Source/assets/knob_large.png"/>
         <FILE id="lZcyVr" name="gui_draft.png" compile="0" resource="1" file="Source/assets/gui_draft.png"/>
         <FILE id="qdZB8L" name="gui_draft_project file.afdesign" compile="0"
               resource="1" file="Source/assets/gui_draft_project file.afdesign"/>
+        <FILE id="sQytNB" name="Knob.cpp" compile="1" resource="0" file="Source/assets/Knob.cpp"/>
+        <FILE id="wkY14A" name="Knob.h" compile="0" resource="0" file="Source/assets/Knob.h"/>
       </GROUP>
       <FILE id="UD4oPk" name="FractionalDelay.cpp" compile="1" resource="0"
             file="Source/FractionalDelay.cpp"/>
