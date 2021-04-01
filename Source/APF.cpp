@@ -24,3 +24,30 @@ float APF::processSample(float x, int c){
     
     return y;
 }
+
+void APF::setFs(float Fs){
+    this->Fs = Fs;
+}
+
+void APF::setFB(float fb){
+    this->fb = fb;
+}
+
+void APF::setMod(float m){
+    fractionalDelay.setDepth(m);
+}
+
+void APF::setDelaySamples(float delaySamples){
+    this->delaySamples = delaySamples;
+    fractionalDelay.setDelaySamples(delaySamples);
+}
+
+void APF::setDelayMS(float delayMS){
+    this->delayMS = delayMS;
+    delaySamples = delayMS * .001 * Fs;
+    fractionalDelay.setDelaySamples(delaySamples);
+}
+
+void APF::setFreqLFO(float freq){
+    fractionalDelay.setSpeed(freq);
+}

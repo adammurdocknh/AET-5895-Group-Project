@@ -11,7 +11,7 @@
 #pragma once
 
     
-class tdl{
+class TDL{
 
 public:
     

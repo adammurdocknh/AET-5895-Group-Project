@@ -30,12 +30,13 @@ public:
 
     float processSample(float x,int channel);
     
-    void setFs(float Fs);
+    void setFs(float newFs);
     
     void setDelay(float delay);
     void setfbGain(float fbGain);
     void setAmp(float amp);
     void setRate(float rate);
+    void setDepth(float depth);
     
     
     
@@ -45,7 +46,7 @@ private:
     
     float fB = 0.0f;
     
-    float Fs = 48000.f;
+    int Fs = 48000;
     
    // float delay = .05f; // Max delay time of 50 ms, where do we do conversion?
     

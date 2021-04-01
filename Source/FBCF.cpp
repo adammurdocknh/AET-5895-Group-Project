@@ -9,7 +9,6 @@
 */
 
 #include "FBCF.h"
-#include "FractionalDelay.cpp"
 
 FBCF::FBCF(){
 }
@@ -25,8 +24,33 @@ float FBCF::processSample(float x, int channel) {
     
     return y;
 
-
 }
+
+void FBCF::setFs(float newFs){
+    Fs = newFs;
+}
+
+void FBCF::setfbGain(float fbGain){
+    this->fbGain = fbGain;
+}
+
+
+void FBCF::setAmp(float amp){
+    this->amp = amp;
+}
+
+void FBCF::setRate(float rate){
+    this->rate = rate;
+}
+
+void FBCF::setDelay(float delay){
+    w = delay;
+}
+
+void FBCF::setDepth(float depth){
+    delay.setDepth(depth);
+}
+
 
 
 

@@ -9,6 +9,11 @@
 */
 
 #pragma once
+#include <JuceHeader.h>
+#include "TDL.h"
+#include "APF.h"
+#include "FBCF.h"
+#include "FractionalDelay.hpp"
 
 class Moorer{
     
@@ -25,6 +30,18 @@ public:
     void setDiffusion(float newDiff);
     
     void setSampleRate(int newFs);
+    
+    TDL tdl;
+    
+    FBCF fbcf1;
+    FBCF fbcf2;
+    FBCF fbcf3;
+    FBCF fbcf4;
+    
+    APF apf1;
+    APF apf2;
+    
+    
     
     
 private:
