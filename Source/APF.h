@@ -10,6 +10,7 @@
 
 #pragma once
 #include <JuceHeader.h>
+#include "FractionalDelay.hpp"
 
 class APF{
 
@@ -17,16 +18,13 @@ public:
  
     // Constructor
     APF();
-    
-    
-    void apf()
-    {
-        
-    }
-    
+
+    float processSample(float x, int c);
     
 private:
     
-
+    FractionalDelay fractionalDelay;
+    
+    float fb = 0;
     
 };
