@@ -17,7 +17,8 @@ class APF{
 public:
  
     // Constructor
-    APF();
+	APF(){};
+	~APF(){};
 
     float processSample(float x, int c);
     
@@ -41,5 +42,7 @@ private:
     
     float delaySamples;
     float delayMS;
+	
+	float delayedSignal = 0.f;
     
 };

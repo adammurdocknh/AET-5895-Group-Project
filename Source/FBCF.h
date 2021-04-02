@@ -18,13 +18,13 @@ class FBCF {
 public:
     
     // Constructor
-    FBCF();
+	FBCF(){};
     
     // What do we need to pass in here?
-    FBCF(float delay, float fbGain, float amp, float rate);
+	FBCF(float delay, float fbGain, float amp, float rate){};
     
     // Destructor
-    ~FBCF();
+	~FBCF(){};
     
     void processSignal(float * signal, const int numSamples, const int channel);
 
@@ -48,6 +48,8 @@ private:
     
     int Fs = 48000;
     
+	float arr[2] = {0.0f};
+	
    // float delay = .05f; // Max delay time of 50 ms, where do we do conversion?
     
     const int MAX_BUFFERSIZE = 96000;

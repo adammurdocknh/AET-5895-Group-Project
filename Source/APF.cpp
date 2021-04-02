@@ -13,16 +13,18 @@
 float APF::processSample(float x, int c){
 
     // Pre-allocate
-    float fb = 0.f;
-    float y = x;
-        
-    // 
-    float w = x + fb;
-    float v = fractionalDelay.processSample(w,c);
-    fb = v;
-    y = w + v;
+//    float fb = 0.f;
+//    float y = x;
+//
+//    //
+//    float w = x + fb;
+//    float v = fractionalDelay.processSample(w,c);
+//    fb = v;
+//    y = w + v;
+	float input = x + (-fb * delayedSignal);
+	delayedSignal = fractionalDelay.processSample(input, c);
     
-    return y;
+    return (delayedSignal + (fb * input));
 }
 
 void APF::setFs(float Fs){

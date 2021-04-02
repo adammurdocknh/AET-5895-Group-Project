@@ -10,29 +10,29 @@
 
 #include "FBCF.h"
 
-FBCF::FBCF(){
-}
+//FBCF::FBCF(){
+//}
 
 float FBCF::processSample(float x, int channel) {
-    
-    float y = x; //allocating memory because it needs to exist
-    
-    fB = 0.f;
-    x += fB;
-    y = delay.processSample(w,channel);
-    fB = y;
-    
-    return y;
-
+	float y = x + (-fbGain) * arr[channel];
+	
+	arr[channel]=delay.processSample(y, channel);
+	
+    return arr[channel];
 }
 
 void FBCF::setFs(float newFs){
     Fs = newFs;
 }
 
-void FBCF::setfbGain(float fbGain){
-    this->fbGain = fbGain;
-}
+void FBCF::setfbGain(float newfbGain){
+//    this->fbGain = fbGain;
+	if (newfbGain < 1.0f) {
+		if (newfbGain >= 0.0f) {
+			fbGain = newfbGain;
+		}
+	}
+};
 
 
 void FBCF::setAmp(float amp){
@@ -41,6 +41,7 @@ void FBCF::setAmp(float amp){
 
 void FBCF::setRate(float rate){
     this->rate = rate;
+	delay.setSpeed(rate);
 }
 
 void FBCF::setDelay(float delay){
@@ -48,7 +49,7 @@ void FBCF::setDelay(float delay){
 }
 
 void FBCF::setDepth(float depth){
-    delay.setDepth(depth);
+	delay.setDepth(depth);
 }
 
 

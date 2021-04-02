@@ -21,6 +21,7 @@ AlgoReverbAudioProcessorEditor::AlgoReverbAudioProcessorEditor (AlgoReverbAudioP
 	timeSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
 	timeSlider.setBounds(155,417,150,150);
 	timeSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 20);
+	timeSlider.setRange(0, 88200,1);
 	timeSlider.setLookAndFeel(&knob);
 	addAndMakeVisible(timeSlider);
 	
@@ -28,6 +29,7 @@ AlgoReverbAudioProcessorEditor::AlgoReverbAudioProcessorEditor (AlgoReverbAudioP
 	diffuseSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
 	diffuseSlider.setBounds(335,417,150,150);
 	diffuseSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 20);
+	diffuseSlider.setRange(0,1,.01);
 	diffuseSlider.setLookAndFeel(&knob);
 	addAndMakeVisible(diffuseSlider);
 	
@@ -35,12 +37,14 @@ AlgoReverbAudioProcessorEditor::AlgoReverbAudioProcessorEditor (AlgoReverbAudioP
 	modSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
 	modSlider.setBounds(515,417,150,150);
 	modSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 20);
+	modSlider.setRange(.1,2,.01);
 	modSlider.setLookAndFeel(&knob);
 	addAndMakeVisible(modSlider);
 
 	mixSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
 	mixSlider.setBounds(695,417,150,150);
 	mixSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 20);
+	mixSlider.setRange(0, 1, .01);
 	mixSlider.setLookAndFeel(&knob);
 	addAndMakeVisible(mixSlider);
 

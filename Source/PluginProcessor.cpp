@@ -95,6 +95,8 @@ void AlgoReverbAudioProcessor::prepareToPlay (double sampleRate, int samplesPerB
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
+	moorerReverb.setSampleRate(sampleRate);
+
 }
 
 void AlgoReverbAudioProcessor::releaseResources()
@@ -158,15 +160,13 @@ void AlgoReverbAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
 	for (int sample=0; sample < buffer.getNumSamples(); ++sample) {
 		for (int channel = 0; channel < totalNumInputChannels; ++channel)
 		{
-//			auto* channelData = buffer.getWritePointer (channel);
-
 			float drySignal = buffer.getReadPointer(channel)[sample];
 			float wetSignal = moorerReverb.processSample(drySignal, channel);
 			
 			wetSignal *= mix;
 			drySignal *= 1-mix;
-			float output = wetSignal + drySignal;
-			buffer.getWritePointer(channel)[sample] = output;
+//			float output = wetSignal + drySignal;
+			buffer.getWritePointer(channel)[sample] = wetSignal + drySignal;
 		}
 	}
 }
