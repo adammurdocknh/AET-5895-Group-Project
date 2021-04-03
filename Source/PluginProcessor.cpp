@@ -95,6 +95,8 @@ void AlgoReverbAudioProcessor::prepareToPlay (double sampleRate, int samplesPerB
 {
     // Use this method as the place to do any pre-playback
     // initialisation that you need..
+	moorerReverb.setSampleRate(sampleRate);
+
 }
 
 void AlgoReverbAudioProcessor::releaseResources()
@@ -144,18 +146,30 @@ void AlgoReverbAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
     for (auto i = totalNumInputChannels; i < totalNumOutputChannels; ++i)
         buffer.clear (i, 0, buffer.getNumSamples());
 
+	moorerReverb.setDiffusion(diffuse);
+	moorerReverb.setReverbTime(time);
+	moorerReverb.setModulation(mod);
+	
+	
+	
     // This is the place where you'd normally do the guts of your plugin's
     // audio processing...
     // Make sure to reset the state if your inner loop is processing
     // the samples and the outer loop is handling the channels.
     // Alternatively, you can process the samples with the channels
     // interleaved by keeping the same state.
-    for (int channel = 0; channel < totalNumInputChannels; ++channel)
-    {
-        auto* channelData = buffer.getWritePointer (channel);
+	for (int sample=0; sample < buffer.getNumSamples(); ++sample) {
+		for (int channel = 0; channel < totalNumInputChannels; ++channel)
+		{
+			float drySignal = buffer.getReadPointer(channel)[sample];
+			float wetSignal = moorerReverb.processSample(drySignal, channel);
+			
+			wetSignal *= mix;
+			drySignal *= 1-mix;
+			buffer.getWritePointer(channel)[sample] = wetSignal + drySignal;
 
-        // ..do something to the data...
-    }
+		}
+	}
 }
 
 //==============================================================================

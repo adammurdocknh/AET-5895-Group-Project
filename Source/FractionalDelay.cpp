@@ -91,6 +91,5 @@ void FractionalDelay::setSpeed(float speed){
 }
 
 void FractionalDelay::setDepth(float depth){
-
     this->depth = depth;
 }

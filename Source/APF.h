@@ -17,14 +17,34 @@ class APF{
 public:
  
     // Constructor
-    APF();
+	APF(){};
+	~APF(){};
 
     float processSample(float x, int c);
+    
+    void setFs(float Fs);
+    
+    void setFB(float fb);
+    
+    void setModAmp(float m);
+    
+    void setDelaySamples(float delaySamples);
+	
+    void setDelayMS(float delayMS);
+    
+	void setFreqLFO(float freq);
     
 private:
     
     FractionalDelay fractionalDelay;
     
-    float fb = 0;
+    float fb;
+    
+    int Fs = 48000;
+    
+    float delaySamples;
+    float delayMS;
+	
+	float delayedSignal = 0.f;
     
 };

@@ -18,24 +18,25 @@ class FBCF {
 public:
     
     // Constructor
-    FBCF();
+//	FBCF(){};
     
     // What do we need to pass in here?
-    FBCF(float delay, float fbGain, float amp, float rate);
+//	FBCF(float delay, float fbGain, float amp, float rate){};
     
     // Destructor
-    ~FBCF();
+//	~FBCF(){};
     
-    void processSignal(float * signal, const int numSamples, const int channel);
+//    void processSignal(float * signal, const int numSamples, const int channel);
 
     float processSample(float x,int channel);
     
-    void setFs(float Fs);
+    void setFs(float newFs);
     
     void setDelay(float delay);
     void setfbGain(float fbGain);
-    void setAmp(float amp);
+//    void setAmp(float amp);
     void setRate(float rate);
+    void setDepth(float depth);
     
     
     
@@ -43,14 +44,16 @@ public:
 private:
     
     
-    float fB = 0.0f;
+//    float fB = 0.0f;
     
-    float Fs = 48000.f;
+    int Fs = 48000;
     
+	float arr[2] = {0.0f};
+	
    // float delay = .05f; // Max delay time of 50 ms, where do we do conversion?
     
     const int MAX_BUFFERSIZE = 96000;
-    float delayBuffer[96000][2] = {0.0f};
+//    float delayBuffer[96000][2] = {0.0f};
     int index[2] = {0};
     
     float fbGain = 0.25f; // <1
@@ -58,8 +61,10 @@ private:
     float rate = 1.0f; // Hz, speed of LFO?
     
     // input needs to be in samples for delay
-    int w = 100.f; //delay in samples
-    FractionalDelay delay{static_cast<float>(w),1.1f};
+    float w = 1.f; //delay in samples
+//    FractionalDelay delay{static_cast<float>(w),1.1f};
+	FractionalDelay delay;
+	
     
     
 
