@@ -166,8 +166,8 @@ void AlgoReverbAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, j
 			
 			wetSignal *= mix;
 			drySignal *= 1-mix;
-//			float output = wetSignal + drySignal;
 			buffer.getWritePointer(channel)[sample] = wetSignal + drySignal;
+
 		}
 	}
 }

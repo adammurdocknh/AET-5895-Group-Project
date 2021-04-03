@@ -22,8 +22,8 @@ AlgoReverbAudioProcessorEditor::AlgoReverbAudioProcessorEditor (AlgoReverbAudioP
 	timeSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
 	timeSlider.setBounds(155,417,150,150);
 	timeSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 20);
-	timeSlider.setRange(0.1f, .9f,.01);
-	timeSlider.setValue(0.5f);
+	timeSlider.setRange(0.5f, .95f,.01);
+	timeSlider.setValue(0.8f);
 	timeSlider.setLookAndFeel(&knob);
 	addAndMakeVisible(timeSlider);
 	
@@ -32,7 +32,7 @@ AlgoReverbAudioProcessorEditor::AlgoReverbAudioProcessorEditor (AlgoReverbAudioP
 	diffuseSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
 	diffuseSlider.setBounds(335,417,150,150);
 	diffuseSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 20);
-	diffuseSlider.setRange(0.f,1.f,.01f);
+	diffuseSlider.setRange(0.1f,0.7f);
 	diffuseSlider.setValue(0.5f);
 	diffuseSlider.setLookAndFeel(&knob);
 	addAndMakeVisible(diffuseSlider);
@@ -42,8 +42,8 @@ AlgoReverbAudioProcessorEditor::AlgoReverbAudioProcessorEditor (AlgoReverbAudioP
 	modSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
 	modSlider.setBounds(515,417,150,150);
 	modSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 20);
-	modSlider.setRange(0.f,1.f,.01);
-	modSlider.setValue(0.f);
+	modSlider.setRange(0.f,10.f,.01);
+	modSlider.setValue(1.f);
 	modSlider.setLookAndFeel(&knob);
 	addAndMakeVisible(modSlider);
 
@@ -94,5 +94,4 @@ void AlgoReverbAudioProcessorEditor::sliderValueChanged(Slider *slider) {
 		audioProcessor.mix = mixSlider.getValue();
 		
 	}
-	
 }
