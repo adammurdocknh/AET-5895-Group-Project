@@ -29,14 +29,16 @@ public:
     void setModAmp(float m);
     
     void setDelaySamples(float delaySamples);
+	
     void setDelayMS(float delayMS);
-    void setFreqLFO(float freq);
+    
+	void setFreqLFO(float freq);
     
 private:
     
     FractionalDelay fractionalDelay;
     
-    float fb = 0;
+    float fb;
     
     int Fs = 48000;
     

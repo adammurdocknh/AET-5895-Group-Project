@@ -17,34 +17,43 @@ AlgoReverbAudioProcessorEditor::AlgoReverbAudioProcessorEditor (AlgoReverbAudioP
     // editor's size to whatever you need it to be.
     setSize(1000,700);
 	bgImage = ImageCache::getFromMemory(BinaryData::gui_draft_png, BinaryData::gui_draft_pngSize);
-//	timeSlider.addListener(this);
+	
+	timeSlider.addListener(this);
 	timeSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
 	timeSlider.setBounds(155,417,150,150);
 	timeSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 20);
-	timeSlider.setRange(0, 88200,1);
+	timeSlider.setRange(0.1f, .9f,.01);
+	timeSlider.setValue(0.5f);
 	timeSlider.setLookAndFeel(&knob);
 	addAndMakeVisible(timeSlider);
 	
 	
+	diffuseSlider.addListener(this);
 	diffuseSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
 	diffuseSlider.setBounds(335,417,150,150);
 	diffuseSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 20);
-	diffuseSlider.setRange(0,1,.01);
+	diffuseSlider.setRange(0.f,1.f,.01f);
+	diffuseSlider.setValue(0.5f);
 	diffuseSlider.setLookAndFeel(&knob);
 	addAndMakeVisible(diffuseSlider);
 	
 	
+	modSlider.addListener(this);
 	modSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
 	modSlider.setBounds(515,417,150,150);
 	modSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 20);
-	modSlider.setRange(.1,2,.01);
+	modSlider.setRange(0.f,1.f,.01);
+	modSlider.setValue(0.f);
 	modSlider.setLookAndFeel(&knob);
 	addAndMakeVisible(modSlider);
 
+	
+	mixSlider.addListener(this);
 	mixSlider.setSliderStyle(Slider::RotaryHorizontalVerticalDrag);
 	mixSlider.setBounds(695,417,150,150);
 	mixSlider.setTextBoxStyle(Slider::TextBoxBelow, false, 50, 20);
 	mixSlider.setRange(0, 1, .01);
+	mixSlider.setValue(5.f);
 	mixSlider.setLookAndFeel(&knob);
 	addAndMakeVisible(mixSlider);
 
@@ -68,6 +77,10 @@ void AlgoReverbAudioProcessorEditor::resized()
 }
 
 void AlgoReverbAudioProcessorEditor::sliderValueChanged(Slider *slider) {
+	cout << "mix: " << audioProcessor.time << endl;
+	cout << "diff:" << audioProcessor.diffuse << endl;
+	cout << "mod:" << audioProcessor.mod << endl;
+	cout << "time:" << audioProcessor.mix << endl;
 	if (slider == &timeSlider) {
 		audioProcessor.time = timeSlider.getValue();
 	}
@@ -79,5 +92,7 @@ void AlgoReverbAudioProcessorEditor::sliderValueChanged(Slider *slider) {
 	}
 	if (slider == &mixSlider) {
 		audioProcessor.mix = mixSlider.getValue();
+		
 	}
+	
 }

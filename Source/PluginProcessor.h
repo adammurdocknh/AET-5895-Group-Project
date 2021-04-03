@@ -55,10 +55,10 @@ public:
     void setStateInformation (const void* data, int sizeInBytes) override;
 	
 	
-	float time = 44100.f;
+	float time = .3f;
 	float diffuse = 0.5f;
 	float mod= 0.f;
-	float mix = 1.f;
+	float mix = 0.5f;
 	
 
 private:

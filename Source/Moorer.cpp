@@ -53,9 +53,9 @@ float Moorer::processSample(float x, int channel){
     float x2 = fbcf2.processSample(x, channel);
     float x3 = fbcf3.processSample(x, channel);
     float x4 = fbcf4.processSample(x, channel);
-    
-    x = (x1 + x2 + x3 + x4) * 0.5f;
-    
+
+    x = (x1 + x2 + x3 + x4) * .125f;
+
     x = apf1.processSample(x, channel);
     x = apf2.processSample(x, channel);
     

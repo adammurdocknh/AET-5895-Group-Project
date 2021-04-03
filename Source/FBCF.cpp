@@ -14,11 +14,11 @@
 //}
 
 float FBCF::processSample(float x, int channel) {
-	float y = x + (-fbGain) * arr[channel];
+	float y = x + (-fbGain)*arr[channel];
 	
-	arr[channel]=delay.processSample(y, channel);
+	arr[channel] = delay.processSample(y, channel);
+	return arr[channel];
 	
-    return arr[channel];
 }
 
 void FBCF::setFs(float newFs){

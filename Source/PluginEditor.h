@@ -34,8 +34,7 @@ private:
 	
 	Image bgImage;
 	
-	
-//	time,diffuse,mod,mix
+
 	Slider timeSlider;
 	Slider diffuseSlider;
 	Slider modSlider;
