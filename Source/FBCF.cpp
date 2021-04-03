@@ -23,6 +23,7 @@ float FBCF::processSample(float x, int channel) {
 
 void FBCF::setFs(float newFs){
     Fs = newFs;
+	delay.setFs(newFs);
 }
 
 void FBCF::setfbGain(float newfbGain){
@@ -33,11 +34,11 @@ void FBCF::setfbGain(float newfbGain){
 		}
 	}
 };
-
-
-void FBCF::setAmp(float amp){
-    this->amp = amp;
-}
+//
+//
+//void FBCF::setAmp(float amp){
+//    this->amp = amp;
+//}
 
 void FBCF::setRate(float rate){
     this->rate = rate;
@@ -51,7 +52,3 @@ void FBCF::setDelay(float delay){
 void FBCF::setDepth(float depth){
 	delay.setDepth(depth);
 }
-
-
-
-

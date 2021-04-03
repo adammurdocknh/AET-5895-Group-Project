@@ -31,8 +31,8 @@ Moorer::Moorer() {
     fbcf3.setRate(.93);
     fbcf4.setRate(.97);
     
-    apf1.setMod(.1);
-    apf2.setMod(.1);
+    apf1.setModAmp(.1);
+    apf2.setModAmp(.1);
     
     apf1.setFreqLFO(1.1);
     apf2.setFreqLFO(1.2);
@@ -72,8 +72,8 @@ void Moorer::setReverbTime(float newReverb){
 }
 
 void Moorer::setModulation(float newMod){
-    apf1.setMod(newMod);
-    apf2.setMod(newMod);
+    apf1.setModAmp(newMod);
+    apf2.setModAmp(newMod);
     fbcf1.setDepth(newMod);
     fbcf2.setDepth(newMod);
     fbcf3.setDepth(newMod);

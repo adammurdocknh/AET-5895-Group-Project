@@ -26,7 +26,7 @@ public:
     
     void setFB(float fb);
     
-    void setMod(float m);
+    void setModAmp(float m);
     
     void setDelaySamples(float delaySamples);
     void setDelayMS(float delayMS);

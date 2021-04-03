@@ -29,13 +29,14 @@ float APF::processSample(float x, int c){
 
 void APF::setFs(float Fs){
     this->Fs = Fs;
+	fractionalDelay.setFs(Fs);
 }
 
 void APF::setFB(float fb){
     this->fb = fb;
 }
 
-void APF::setMod(float m){
+void APF::setModAmp(float m){
     fractionalDelay.setDepth(m);
 }
 
